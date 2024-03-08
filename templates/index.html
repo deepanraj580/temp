@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fertilizer Stock Management</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Welcome to the Fertilizer Stock Management System</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <a href="/add_stock" class="card-link">
+        <img src="{{ url_for('static', filename='add_stock.png') }}" alt="Add Fertilizer Stock" class="card-image">
+        <h3 class="card-title">Add Fertilizer Stock</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/stock_list" class="card-link">
+        <img src="{{ url_for('static', filename='stock_list.png') }}" alt="View Stock List" class="card-image">
+        <h3 class="card-title">View Stock List</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/add_customer" class="card-link">
+        <img src="{{ url_for('static', filename='add_customer.png') }}" alt="Add Customer Details" class="card-image">
+        <h3 class="card-title">Add Customer Details</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/customer_list" class="card-link">
+        <img src="{{ url_for('static', filename='customer_list.png') }}" alt="View Customer List" class="card-image">
+        <h3 class="card-title">View Customer List</h3>
+      </a>
+    </div>
+
+    
+
+  </div>
+</body>
+</html>

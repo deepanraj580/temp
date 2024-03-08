@@ -1,0 +1,84 @@
+/* Base styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f3f3f3; /* Add a subtle background color */
+  }
+  
+  h1 {
+    color: #282828;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form container */
+  .form-centered {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form layout and styling */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  /* Buttons */
+  .buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button,
+  a.back-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; /* Adjust button color as needed */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  a.back-button {
+    background-color: #d35400; /* Adjust back button color as needed */
+  }
+  
+  button:hover,
+  a.back-button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Optional: Error messages */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Optional: Success message */
+  .success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  

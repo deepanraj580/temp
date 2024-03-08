@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertilizer Stock List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='stock_list.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Fertilizer Stock List</h1>
+
+    <div class="options">
+        
+      <p>Total Items: {{ stock_list|length }}</p>
+      <form method="GET" action="{{ url_for('stock_list') }}" class="search-form">
+        <input type="text" id="search" name="search" placeholder="Enter search term" value="{{ request.args.get('search', '') }}">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    {% if stock_list %}
+        <table>
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Subcategory</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stock_list %}
+            <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.subcategory }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>
+                <a href="{{ url_for('update_stock', id=item.id) }}">Update</a>
+                <a href="{{ url_for('delete_stock', id=item.id) }}" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
+            </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    {% else %}
+        <p class="no-items">No items found.</p>
+    {% endif %}
+    <a href="/" class="back-button">Back to Home</a>
+  </div>
+</body>
+</html>

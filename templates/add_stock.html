@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Fertilizer Stock</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='add_stock.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Add Fertilizer Stock</h1>
+
+    <form method="POST" class="form-centered">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subcategory">Subcategory:</label>
+        <input type="text" id="subcategory" name="subcategory" required>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price per Unit:</label>
+        <input type="number" step="0.01" id="price" name="price" required>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity (Units):</label>
+        <input type="number" id="quantity" name="quantity" required>
+      </div>
+
+      <div class="buttons">
+        <button type="submit">Add Stock</button>
+        <a href="/" class="back-button">Back to Home</a>
+      </div>
+
+      <div id="success-message" class="{% if message and alert_type == 'success' %}alert alert-success{% else %}hidden{% endif %}">
+        {% if message and alert_type == 'success' %}
+            {{ message }}
+        {% endif %}
+      </div>
+
+      <div id="error-message" class="{% if message and alert_type == 'danger' %}alert alert-danger{% else %}hidden{% endif %}">
+        {% if message and alert_type == 'danger' %}
+            {{ message }}
+        {% endif %}
+      </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    window.onload = function() {
+        setTimeout(function() {
+            var successMessage = document.getElementById('success-message');
+            var errorMessage = document.getElementById('error-message');
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
+        }, 10000);  // Hide the messages after 20 seconds
+    };
+  </script>
+</body>
+</html>  
+
